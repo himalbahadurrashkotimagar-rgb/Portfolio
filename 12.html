@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Himal Rasshkoti - IT Educator, Data Analyst & IT Technician Portfolio">
+    <title>Himal Rasshkoti | IT Educator, Data Analyst & IT Technician</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+<div style="text-align:center; margin-top:10px;">
+    <input type="text" id="searchBox" placeholder="Search this portfolio...">
+    <button id="searchBtn" onclick="searchPortfolio()">Search</button>
+</div>
+
+<header>
+    <h1>Himal Rasshkoti</h1>
+    <p>IT Educator, Data Analyst & IT Technician</p>
+    <p>Turning data into insight and technology into understanding</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am an IT Educator, Data Analyst, and IT Technician passionate about teaching, problem-solving, and transforming data into meaningful insights. I specialize in simplifying complex technical concepts and guiding learners and organizations to make data-driven decisions.</p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Data Analysis</h3>
+            <ul>
+                <li>Data Cleaning & Preparation</li>
+                <li>Exploratory Data Analysis (EDA)</li>
+                <li>Statistical Analysis</li>
+                <li>Data Visualization & Dashboards</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Tools & Technologies</h3>
+            <ul>
+                <li>Excel / Google Sheets</li>
+                <li>SQL</li>
+                <li>Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
+                <li>Power BI / Tableau</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>IT & Education</h3>
+            <ul>
+                <li>IT Training & Curriculum Development</li>
+                <li>Technical Documentation</li>
+                <li>Learning Management Systems (LMS)</li>
+                <li>Mentoring & Workshops</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2>Experience</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>IT Educator</h3>
+            <ul>
+                <li>Delivered IT and data-related training to students and professionals</li>
+                <li>Designed structured learning materials and practical exercises</li>
+                <li>Explained complex technical topics in a clear, accessible way</li>
+                <li>Supported learners through mentoring and assessments</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Data Analyst</h3>
+            <ul>
+                <li>Analyzed datasets to identify trends and insights</li>
+                <li>Built dashboards and reports for decision-making</li>
+                <li>Cleaned and transformed data for accuracy</li>
+                <li>Collaborated with stakeholders to define data requirements</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Student Performance Analysis</h3>
+            <p>Analyzed academic datasets to identify performance trends and built visual dashboards to support educators with actionable insights.</p>
+        </div>
+        <div class="card">
+            <h3>Business Sales Dashboard</h3>
+            <p>Created interactive dashboards using Power BI / Tableau to track KPIs, revenue trends, and customer behavior, improving reporting efficiency.</p>
+        </div>
+        <div class="card">
+            <h3>IT Training Programs</h3>
+            <p>Designed and delivered structured IT training modules covering fundamentals of data, software tools, and technology with practical focus.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>I am open to teaching opportunities, data analysis projects, and professional collaborations.</p>
+    <ul>
+        <li>Email: himalbahadurrashkotimagar@gmail.com</li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/himal-bahadur-rashkoti-magar-91630a1b7" target="_blank">linkedin.com/in/himal-bahadur-rashkoti-magar-91630a1b7</a></li>
+    </ul>
+</section>
+
+<footer>
+    &copy; 2025 Himal Rasshkoti | IT Educator, Data Analyst & IT Technician
+</footer>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
+function searchPortfolio() {
+    const query = document.getElementById('searchBox').value.toLowerCase();
+    if(!query) return;
+
+    document.querySelectorAll('.highlight').forEach(el => el.classList.remove('highlight'));
+
+    const sections = document.querySelectorAll('section');
+    let found = false;
+    sections.forEach(section => {
+        if(section.innerText.toLowerCase().includes(query)) {
+            section.scrollIntoView({behavior: 'smooth'});
+            section.classList.add('highlight');
+            found = true;
+        }
+    });
+    if(!found) alert('No results found.');
+}
+</script>
+
+</body>
+</html>
